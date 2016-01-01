@@ -76,6 +76,7 @@ namespace OfficeDiff
         private void button1_Click(object sender, EventArgs e)
         {
             string cmdbase = "C:\\Program Files\\TortoiseSVN\\Diff-Scripts";
+            cmdbase = Properties.Settings.Default.BaseCmdPath;
             string cmd = cmdbase + "\\diff-doc.js";
             System.Diagnostics.Process.Start(cmd, textBox1.Text + " " + textBox2.Text);
         }
@@ -92,6 +93,39 @@ namespace OfficeDiff
             string cmdbase = "C:\\Program Files\\TortoiseSVN\\Diff-Scripts";
             string cmd = cmdbase + "\\diff-ppt.js";
             System.Diagnostics.Process.Start(cmd, textBox1.Text + " " + textBox2.Text);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Form2 form = new Form2();
+            form.basecmdpath = Properties.Settings.Default.BaseCmdPath;
+            if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                Properties.Settings.Default.BaseCmdPath = form.basecmdpath;
+                Properties.Settings.Default.Save();
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.FileName = textBox1.Text;
+            dlg.Filter = "Word (*.doc;*.docx)|*.doc;*.docx|Excel (*.xls;*.xlsx)|*.xls;*.xlsx|Power Point (*.ppt;*.pptx)|*.ppt;*.pptx|すべてのファイル(*.*)|*.*";
+            if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                textBox1.Text = dlg.FileName;
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.FileName = textBox2.Text;
+            dlg.Filter = "Word (*.doc;*.docx)|*.doc;*.docx|Excel (*.xls;*.xlsx)|*.xls;*.xlsx|Power Point (*.ppt;*.pptx)|*.ppt;*.pptx|すべてのファイル(*.*)|*.*";
+            if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                textBox2.Text = dlg.FileName;
+            }
         }
     }
 }
