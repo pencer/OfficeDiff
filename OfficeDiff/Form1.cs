@@ -113,6 +113,7 @@ namespace OfficeDiff
 
         private void button4_Click(object sender, EventArgs e)
         {
+            // Set file 1
             OpenFileDialog dlg = new OpenFileDialog();
             dlg.FileName = textBox1.Text;
             dlg.Filter = "Word (*.doc;*.docx)|*.doc;*.docx|Excel (*.xls;*.xlsx)|*.xls;*.xlsx|Power Point (*.ppt;*.pptx)|*.ppt;*.pptx|すべてのファイル(*.*)|*.*";
@@ -124,6 +125,7 @@ namespace OfficeDiff
 
         private void button5_Click(object sender, EventArgs e)
         {
+            // Set file 2
             OpenFileDialog dlg = new OpenFileDialog();
             dlg.FileName = textBox2.Text;
             dlg.Filter = "Word (*.doc;*.docx)|*.doc;*.docx|Excel (*.xls;*.xlsx)|*.xls;*.xlsx|Power Point (*.ppt;*.pptx)|*.ppt;*.pptx|すべてのファイル(*.*)|*.*";

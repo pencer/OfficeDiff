@@ -23,6 +23,7 @@ namespace OfficeDiff
         {
             // Folder Selection Dialog
             FolderBrowserDialog dlg = new FolderBrowserDialog();
+            dlg.SelectedPath = textBox1.Text;
             if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 textBox1.Text = dlg.SelectedPath;
