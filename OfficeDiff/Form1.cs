@@ -75,22 +75,27 @@ namespace OfficeDiff
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string cmdbase = "C:\\Program Files\\TortoiseSVN\\Diff-Scripts";
-            cmdbase = Properties.Settings.Default.BaseCmdPath;
+            // Diff Word
+            //string cmdbase = "C:\\Program Files\\TortoiseSVN\\Diff-Scripts";
+            string cmdbase = Properties.Settings.Default.BaseCmdPath;
             string cmd = cmdbase + "\\diff-doc.js";
             System.Diagnostics.Process.Start(cmd, textBox1.Text + " " + textBox2.Text);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string cmdbase = "C:\\Program Files\\TortoiseSVN\\Diff-Scripts";
+            // Diff Excel
+            //string cmdbase = "C:\\Program Files\\TortoiseSVN\\Diff-Scripts";
+            string cmdbase = Properties.Settings.Default.BaseCmdPath;
             string cmd = cmdbase + "\\diff-xls.js";
             System.Diagnostics.Process.Start(cmd, textBox1.Text + " " + textBox2.Text);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string cmdbase = "C:\\Program Files\\TortoiseSVN\\Diff-Scripts";
+            // Diff Powerpoint
+            //string cmdbase = "C:\\Program Files\\TortoiseSVN\\Diff-Scripts";
+            string cmdbase = Properties.Settings.Default.BaseCmdPath;
             string cmd = cmdbase + "\\diff-ppt.js";
             System.Diagnostics.Process.Start(cmd, textBox1.Text + " " + textBox2.Text);
         }
